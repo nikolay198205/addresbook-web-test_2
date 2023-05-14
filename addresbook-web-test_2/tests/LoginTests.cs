@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
