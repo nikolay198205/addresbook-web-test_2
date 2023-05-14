@@ -22,13 +22,14 @@ namespace WebAddressbookTests
 
         public void Login(AccountData account) // метод. будем в него принимать один параметр типа AccountData
         {
-            if (IsLoggedIn())
+           if (IsLoggedIn()) // если мы уже залогинены то 
             {
-                if (IsLoggedIn(account))
+                if (IsLoggedIn(account)) // проверка залогинены ли мы с той учетной записью какой надо
                 {
                     return;
                 }
-                logout();
+              
+                Logout(); // а вот это - если залогинены под другой учетной записью, то выход из учетной записи
 
             }
 
@@ -40,21 +41,32 @@ namespace WebAddressbookTests
 
 
 
-        public void logout()
+        public void Logout() 
         {
-            throw new NotImplementedException();
+            // он должен предварительно проверить что нужная ссылка есть
+            if(IsLoggedIn())
+            {
+                driver.FindElement(By.LinkText("Logout")).Click(); // клик по ссылке ЛОГАУТ
+
+            }
+            
         }
 
 
 
         public bool IsLoggedIn()
         {
-            throw new NotImplementedException();
+            return IsElementPresent(By.Name("logout")); //если есть элемент с именем logout то это признак того, что мы находимся в какой то сессии
+           
         }
 
         public bool IsLoggedIn(AccountData account)
         {
-            throw new NotImplementedException();
+            return IsLoggedIn() // проверка что мы залогинены
+                 && // И проверка сразу двух условий
+                 driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text 
+                 == "(" + account.Username + ")";// находим элемент с именем логаут, далее находим элемент b потом имя ползователя
+            
         }
     }
 }

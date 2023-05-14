@@ -17,6 +17,9 @@ namespace WebAddressbookTests //пространство именs
         public void ContactRemovalTest()
         {
             app.Contacts.Remove(1);
+            //тесты торопятся, надо немного доработать метод RemoveContact, чтобы он ждал появления сообщения о том, что контакт удалён
+            //driver.SwitchTo().Alert().Accept();
+            //driver.FindElement(By.CssSelector("div.msgbox"));
         }
 
 

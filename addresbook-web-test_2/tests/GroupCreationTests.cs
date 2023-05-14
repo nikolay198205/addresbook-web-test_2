@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace WebAddressbookTests //пространство имен
 {
     [TestFixture]
-    public class GroupCreationTests : AuthTestBase // объявляем тесты наследниками TestBase//Класс для проверки правильности создания групп
+    public class GroupCreationTests : AuthTestBase // объявляем тесты наследниками AuthTestBase так как им нужен логин
     {
         [Test]
         public void GroupCreationTest() //тестовый метод по проверке не пустых значений в группе

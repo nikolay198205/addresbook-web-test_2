@@ -45,6 +45,20 @@ namespace WebAddressbookTests
 
         }
 
+        // сделаем деструктор чтобы останавливать броузер
+        ~ ApplicationManager()
+        {
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception)
+            {
+                // Ignore errors if unable to close the browser
+            }
+        }
+            
+
         //Делаем новый метод для параллельного запуска тестов
         public static ApplicationManager GetInstance() // глобальный метод. может быть вызван везде. ДОлжен вернуть экземпляр класса ApplicationManager
         {
@@ -65,18 +79,7 @@ namespace WebAddressbookTests
         }
 
 
-        public void Stop() // для остановки всего что нужно внутри апликейшнменеджера
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-                // Ignore errors if unable to close the browser
-            }
-        }
-        // делаем геттер для для вызова помошников
+      
         public LoginHelper Auth
         {
             get { return loginHelper; }

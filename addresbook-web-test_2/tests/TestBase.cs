@@ -20,7 +20,7 @@ namespace WebAddressbookTests
             //baseURL = "http://localhost/addressbook/";
             // verificationErrors = new StringBuilder();
             app = ApplicationManager.GetInstance(); // получаем доступ к тому единственному экземпляру, который хранится внутри ApplicationManager, который автоматически создается при первом обращении
-
+            app.Auth.Login(new AccountData("admin", "secret"));
 
 
 

@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace WebAddressbookTests
 {
     [TestFixture] //атрибут чтобы класс был признан NUnit в качестве тестового
-    public class GroupModificationTests : AuthTestBase
+    public class GroupModificationTests : AuthTestBase // объявляем тесты наследниками AuthTestBase так как им нужен логин
     {
         [Test]
         public void GroupModificationTest()

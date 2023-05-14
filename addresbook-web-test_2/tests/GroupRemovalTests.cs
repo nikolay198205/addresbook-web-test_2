@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class GroupRemovalTests : AuthTestBase // объявляем тесты наследниками TestBase
+    public class GroupRemovalTests : AuthTestBase // объявляем тесты наследниками AuthTestBase так как им нужен логин
     {
 
         [Test]
