@@ -19,6 +19,7 @@ namespace WebAddressbookTests
             //driver = new FirefoxDriver();
             //baseURL = "http://localhost/addressbook/";
             // verificationErrors = new StringBuilder();
+          
             app.Auth.Login(new AccountData("admin", "secret"));
 
 

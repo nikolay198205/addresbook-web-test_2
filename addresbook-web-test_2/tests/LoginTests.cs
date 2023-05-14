@@ -12,7 +12,7 @@ using OpenQA.Selenium.Support.UI;
 namespace WebAddressbookTests
 {
     [TestFixture] //атрибут чтобы класс был признан NUnit в качестве тестового
-    public class LoginTests : TestBase
+    public class LoginTests : TestBase // тест не требует предварительной авторизации
     {
         [Test]
         public void LoginWithValidCredentials() // логирование с валидными данными
