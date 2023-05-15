@@ -21,13 +21,24 @@ namespace WebAddressbookTests
 
         public void GoToHomePage()
         {
+            if (driver.Url == baseURL) // проверка на то, что открыта страница групп (Для ДЗ)
+            {
+                return;
+            }
+
             driver.Navigate().GoToUrl(baseURL);
         }
 
 
 
-        public void GoToGroupsPage()
+        public void GoToGroupsPage() // метод который осуществляет переход на страницу групп
         {
+            if (driver.Url == baseURL + "/addressbook/group.php"
+                &&
+                IsElementPresent(By.Name("new"))) // проверка на то, что открыта страница групп (Для ДЗ)
+            {
+                return;
+            }
             driver.FindElement(By.LinkText("groups")).Click();
         }
 

@@ -35,10 +35,11 @@ namespace WebAddressbookTests
 
         {
             // подготовка тестовой ситуации
+           
             app.Auth.Logout(); // перед выполнением нужно сделать логаут
 
             //действие
-            AccountData account = new AccountData("admin", "123");//вынесем тестовые данные в переменную
+            AccountData account = new AccountData("admin", "789");//вынесем тестовые данные в переменную
             app.Auth.Login(account);
 
             //проверка

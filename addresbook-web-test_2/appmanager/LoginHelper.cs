@@ -35,7 +35,6 @@ namespace WebAddressbookTests
 
             Type(By.Name("user"), account.Username);
             Type(By.Name("pass"), account.Password);
-
             driver.FindElement(By.XPath("//input[@value='Login']")).Click(); // нажатие на кнопку
         }
 
@@ -64,8 +63,7 @@ namespace WebAddressbookTests
         {
             return IsLoggedIn() // проверка что мы залогинены
                  && // И проверка сразу двух условий
-                 driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text 
-                 == "(" + account.Username + ")";// находим элемент с именем логаут, далее находим элемент b потом имя ползователя
+                 driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text == "(" + account.Username + ")";// находим элемент с именем логаут, далее находим элемент b потом имя пользователя
             
         }
     }
